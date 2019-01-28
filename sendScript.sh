@@ -29,7 +29,7 @@ phonePath="/Users/thomaskosciuch/Documents/02_projects/catFacts/numbers.txt"
 
 #	Selects random fact out of fact list
 factLength=$(wc -l $filePath)
-factNum=$$(($(od -vAn -N4 -tu4 </dev/urandom)%139))
+factNum=$($(od -vAn -N4 -tu4 </dev/urandom)%139)
 toSend=$(sed -n "${factNum}p" < $filePath)
 #echo "$toSend" #previews catFact
 
